@@ -3,7 +3,7 @@
 const table = document.querySelector('table');
 const newTh = document.createElement('th');
 
-table.tHead.rows[0].cells[3].after(newTh);
+table.tHead.rows[0].lastElementChild.before(newTh);
 
 newTh.innerHTML = table.tHead.rows[0].cells[1].innerHTML;
 
@@ -13,13 +13,13 @@ const trs = tbody.querySelectorAll('tr');
 trs.forEach((tr) => {
   const newTd = document.createElement('td');
 
-  tr.cells[3].after(newTd);
+  tr.lastElementChild.before(newTd);
   newTd.innerHTML = tr.cells[1].innerHTML;
 });
 
 const tfoot = table.querySelector('tfoot');
 const newTfootTh = document.createElement('th');
 
-tfoot.rows[0].cells[3].after(newTfootTh);
+tfoot.rows[0].lastElementChild.before(newTfootTh);
 
-newTfootTh.innerHTML = table.tHead.rows[0].cells[1].innerHTML;
+newTfootTh.innerHTML = tfoot.rows[0].cells[1].innerHTML;
